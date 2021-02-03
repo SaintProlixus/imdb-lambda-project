@@ -42,6 +42,9 @@ class Series:
             Episode Std. Dev: {self.ep_stdev}\n\
             Seasons: {self.seasons}"
     
+    def __repr__(self):
+        return self.__str__()
+    
     def populate_seasons(self):
         for season_num, season in self.series["episodes"].items():
             self.seasons[season_num] = Season(self, season_num, season)
