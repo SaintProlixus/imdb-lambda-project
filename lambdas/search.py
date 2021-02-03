@@ -7,5 +7,5 @@ def get_search_results(title):
     data = {}
     for result in results:
         if "series" in result.data["kind"]:
-            data[result.movieID] = result.data["title"], result.data["kind"]
+            data[result.movieID] = result["title"], result["year"], result["kind"]
     return data
