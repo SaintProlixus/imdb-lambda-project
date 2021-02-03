@@ -83,6 +83,23 @@ class Series:
     def get_finale(self):
         final_season = self.seasons[max(self.seasons.keys())]
         return final_season.episodes[max(final_season.episodes.keys())]
+
+    def get_analysis(self):
+        if len(self.seasons) == 1:
+            return self.one_season_analysis()
+        elif len(self.seasons) == 2:
+            return self.two_season_analysis()
+        else:
+            return self.multi_season_analysis()
+    
+    def one_season_analysis(self):
+        pass
+
+    def two_season_analysis(self):
+        pass
+
+    def multi_season_analysis(self):
+        pass
         
 
 class Season:
@@ -125,7 +142,7 @@ class Episode:
         self.episode_num = episode_num
         self.episode = episode
         self.rating = episode["rating"]
-        print(self.rating)
+        # print(self.rating)
         self.title = episode["episode title"]
         self.plot = episode["plot"]
         self.season.ratings.append(self.rating)
